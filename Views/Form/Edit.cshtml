@@ -1,0 +1,126 @@
+﻿@model formApp.Models.FormModel
+
+@{
+    ViewData["Title"] = "Create Form";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Edit Form</title>
+
+    <style>
+            body {
+                font-family: Arial;
+                background-color: #f4f4f4;
+            }
+
+            .container {
+                width: 400px;
+                margin: 50px auto;
+                background: white;
+                padding: 25px;
+                border-radius: 10px;
+            }
+
+            input {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 15px;
+            }
+
+            button {
+                width: 100%;
+                padding: 10px;
+                background-color: dodgerblue;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+                button:hover {
+                    background-color: royalblue;
+                }
+
+            label {
+                font-weight: bold;
+            }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Edit User Form</h2>
+
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <div>
+                <label>Name</label>
+                <input asp-for="Name" placeholder="Enter name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+
+
+            <div>
+                <label>Email</label>
+                <input asp-for="Email" placeholder="Enter email" />
+                <span asp-validation-for="Email"></span>
+            </div>
+
+
+            <div>
+                <label>Age</label>
+                <input asp-for="Age" placeholder="Enter age" />
+                <span asp-validation-for="Age"></span>
+            </div>
+
+
+            <div>
+                <label>Phone No</label>
+                <input asp-for="PhoneNo" placeholder="Enter phone number" />
+                <span asp-validation-for="PhoneNo"></span>
+            </div>
+
+
+            <div>
+                <label>City</label>
+                <input asp-for="City" placeholder="Enter city" />
+            </div>
+
+
+            <div>
+                <label>State</label>
+                <input asp-for="State" placeholder="Enter state" />
+            </div>
+
+
+            <div>
+                <label>Postal Code</label>
+                <input asp-for="PostalCode" placeholder="Enter postal code" />
+            </div>
+
+
+            <button type="submit">
+                Save
+            </button>
+
+
+        </form>
+
+    </div>
+
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+
+</body>
+</html>

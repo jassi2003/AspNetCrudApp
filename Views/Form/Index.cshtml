@@ -1,0 +1,72 @@
+﻿@model List<formApp.Models.FormModel>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="~/css/formindex.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>All Records</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>City</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model?.Any() != true)
+            {
+                <tr>
+                    <td colspan="6">No records found.</td>
+                </tr>
+            }
+    else{
+            @foreach (var item in Model){
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>@item.Age</td>
+                    <td>@item.PhoneNo</td>
+                    <td>@item.City</td>
+
+                        <td>
+                            <div class="action-buttons">
+                            <a asp-action="Edit"
+                               asp-route-id="@item.Id"
+                               class="btn btn-edit">
+                                Edit
+                            </a>
+
+                            <a asp-action="Delete"
+                               asp-route-id="@item.Id"
+                               class="btn btn-delete">
+                                Delete
+                            </a>
+                            </div>
+                        </td>
+                </tr>
+            }
+    }
+        </tbody>
+    </table>
+
+ <div class="add-record-container">
+    <a asp-action="Create" class="btn-add">
+        Add New Record
+    </a>
+</div>
+
+
+</body>
+</html>

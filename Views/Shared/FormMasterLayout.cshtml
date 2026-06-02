@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"] - Form App</title>
+
+    <link href="~/css/formlayoutmaster.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header>
+        <h1>
+            <a asp-controller="Form" asp-action="Index">
+                Form CRUD Application
+            </a>
+        </h1>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
