@@ -24,10 +24,12 @@ namespace formApp.Controllers
         {
             return View();
         }
-       
+       //CREATE
         [HttpPost]
         public IActionResult Create(FormModel form)
         {
+            Console.WriteLine("POST HIT");
+
             if (ModelState.IsValid)
             {
                 _context.Forms.Add(form);
@@ -48,7 +50,6 @@ namespace formApp.Controllers
             {
                 return NotFound();
             }
-
             return View(form);
         }
 
@@ -90,9 +91,7 @@ namespace formApp.Controllers
                 _context.Forms.Remove(form);
                 _context.SaveChanges();
             }
-
             return RedirectToAction("Index");
         }
-
     }
 }

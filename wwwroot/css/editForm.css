@@ -37,6 +37,7 @@ main {
 }
 
 
+
 /* FORM CARD */
 .form-card {
     background: var(--surface);
@@ -242,6 +243,7 @@ input::placeholder {
         width: 16px;
         height: 16px;
     }
+
 
 
 @media (max-width: 540px) {

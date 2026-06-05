@@ -8,7 +8,7 @@ namespace formApp.Models
             : base(options)
         {
         }
-
         public DbSet<FormModel> Forms { get; set; }
+        //<determines type of ibject stored in db >
     }
 }
